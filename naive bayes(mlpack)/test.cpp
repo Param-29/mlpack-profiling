@@ -1,23 +1,16 @@
 /**
- * @author Parikshit Ram (pram@cc.gatech.edu)
- * @file nbc_main.cpp
  *
  * This program runs the Simple Naive Bayes Classifier.
  *
- * This classifier does parametric naive bayes classification assuming that the
- * features are sampled from a Gaussian distribution.
- *
- * mlpack is free software; you may redistribute it and/or modify it under the
- * terms of the 3-clause BSD license.  You should have received a copy of the
- * 3-clause BSD license along with mlpack.  If not, see
- * http://www.opensource.org/licenses/BSD-3-Clause for more information.
  */
 #include <mlpack/prereqs.hpp>
 #include <mlpack/core/util/cli.hpp>
 #include <mlpack/core/data/normalize_labels.hpp>
 #include<omp.h>
 #include <mlpack/methods/naive_bayes/naive_bayes_classifier.hpp>
+//including this will include "original naive_bayes"
 //#include "naive_bayes/naive_bayes_classifier.hpp"
+//including this will include openmp version of naive_bayes
 
 using namespace mlpack;
 using namespace mlpack::naive_bayes;
@@ -57,12 +50,12 @@ int main()
     model = NaiveBayesClassifier<>(trainingData, labels,
         mappings.n_elem, incrementalVariance);
     Traintime = omp_get_wtime() - Traintime;
-    cout<<"\n"<<MAXpoints<<"\n"<<Traintime<<endl;
+    cout<<"\n"<<"Traintime"<<"\n"<<Traintime<<endl;
 
     double testTime=omp_get_wtime();
     model.Classify(trainingData, predictions, probabilities);
     testTime = omp_get_wtime() - testTime;
-    cout<<"\n"<<MAXpoints<<"\n"<<testTime<<endl;
+    cout<<"\n"<<"Testtime"<<"\n"<<testTime<<endl;
     
     size_t correct = 0;
       for (size_t i = 0; i < labels.n_cols; ++i)
