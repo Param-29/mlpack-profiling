@@ -1,0 +1,30 @@
+Serial Results (OMP_NUM_THREADS=1)
+
+ Performance counter stats for './a.out' (5 runs):
+
+          5,335.07 msec task-clock                #    0.997 CPUs utilized            ( +-  0.56% )
+               165      context-switches          #    0.031 K/sec                    ( +- 24.75% )
+                 3      cpu-migrations            #    0.000 K/sec                    ( +- 31.25% )
+          2,77,771      page-faults               #    0.052 M/sec                    ( +-  0.00% )
+   16,46,14,39,143      cycles                    #    3.086 GHz                      ( +-  0.55% )
+   31,65,81,68,033      instructions              #    1.92  insn per cycle           ( +-  0.01% )
+    3,42,87,48,531      branches                  #  642.681 M/sec                    ( +-  0.03% )
+       1,53,50,576      branch-misses             #    0.45% of all branches          ( +-  0.36% )
+
+            5.3507 +- 0.0282 seconds time elapsed  ( +-  0.53% )
+
+Parallel Results (OMP_NUM_THREADS=4)
+
+ Performance counter stats for './a.out' (5 runs):
+
+         15,920.17 msec task-clock                #    2.130 CPUs utilized            ( +-  2.76% )
+          5,49,297      context-switches          #    0.035 M/sec                    ( +- 66.75% )
+                41      cpu-migrations            #    0.003 K/sec                    ( +- 12.91% )
+          5,13,621      page-faults               #    0.032 M/sec                    ( +-  0.00% )
+   48,28,95,48,326      cycles                    #    3.033 GHz                      ( +-  3.09% )
+   42,61,08,16,138      instructions              #    0.88  insn per cycle           ( +-  0.58% )
+    5,52,65,75,452      branches                  #  347.143 M/sec                    ( +-  0.79% )
+       6,19,69,154      branch-misses             #    1.12% of all branches          ( +-  1.72% )
+
+            7.4731 +- 0.0244 seconds time elapsed  ( +-  0.33% )
+
