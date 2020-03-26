@@ -1,0 +1,29 @@
+Serial
+
+ Performance counter stats for './a.out':
+
+            526.44 msec task-clock                #    0.995 CPUs utilized          
+                52      context-switches          #    0.099 K/sec                  
+                 0      cpu-migrations            #    0.000 K/sec                  
+             2,182      page-faults               #    0.004 M/sec                  
+    1,52,21,68,189      cycles                    #    2.891 GHz                    
+    2,13,26,21,109      instructions              #    1.40  insn per cycle         
+      30,79,78,403      branches                  #  585.021 M/sec                  
+         29,03,332      branch-misses             #    0.94% of all branches        
+
+       0.529248068 seconds time elapsed
+Parallel
+
+ Performance counter stats for './a.out':
+
+            798.20 msec task-clock                #    1.363 CPUs utilized          
+               323      context-switches          #    0.405 K/sec                  
+                 1      cpu-migrations            #    0.001 K/sec                  
+             2,162      page-faults               #    0.003 M/sec                  
+    2,22,49,63,348      cycles                    #    2.787 GHz                    
+    2,33,96,46,468      instructions              #    1.05  insn per cycle         
+      34,76,84,946      branches                  #  435.587 M/sec                  
+         37,65,158      branch-misses             #    1.08% of all branches        
+
+       0.585598303 seconds time elapsed
+
